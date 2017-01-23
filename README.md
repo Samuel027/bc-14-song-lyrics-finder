@@ -2,13 +2,12 @@
 
 A console application that: 
 
-```
+
 -You can use to find a list of songs that match a certain criteria
 
 -To view song lyrics based on it's id.
 
 -To store song details and lyrics locally
-```
 
 ## Getting Started
 
