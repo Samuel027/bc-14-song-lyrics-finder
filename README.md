@@ -9,6 +9,8 @@ A console application that:
 
 -To store song details and lyrics locally
 
+-To clear entire local song database
+
 ## Getting Started
 
 The following step by step instructions should get the code running on your computer.
