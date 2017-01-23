@@ -23,7 +23,7 @@ A computer with [python](https://www.python.org/downloads/) software installed.
 
 Clone the following github repository. 
 
-`https://github.com/Samuel027/programming-logic-tdd-git-version-control.git`
+`https://github.com/Samuel027/song-lyrics-finder.git`
 
 
 ## Authors
