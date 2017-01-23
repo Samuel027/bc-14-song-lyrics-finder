@@ -1,6 +1,6 @@
 # Song lyrics finder
 
-A console application that:
+A console application that: 
 
 `
 -You can use to find a list of songs that match a certain criteria
