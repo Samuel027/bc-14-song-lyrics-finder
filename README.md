@@ -11,7 +11,7 @@ A console application that:
 
 -To clear entire local song database
 
-# IMPORTANT TERMINOLOGIES
+## IMPORTANT TERMINOLOGIES
 
 ### SQLite
 
