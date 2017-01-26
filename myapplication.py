@@ -1,9 +1,9 @@
 """
 
-Filename    :
-Date        :
-Author      :
-Description :
+Filename    : song-lyrics-finder.py
+Date        : January, 2017
+Author      : Samuel Maina
+Description : song lyrics finder commandline programme
 
 """
 # =======================================================================================
@@ -17,7 +17,7 @@ import requests
 from prettytable import PrettyTable as table 
 from sqlalchemy.sql import select
 from sqlalchemy.ext.declarative import declarative_base
-from db import Music
+from database import Music
 
 
 # =============================================================================================
@@ -55,23 +55,21 @@ class Lines():
         method = "track.search"
         query_string = {"apikey": self.api_key, "q": search_term}
         data = requests.get(self.base_url + method, params=query_string).json()
-        musical_table = table(['Track No.','Track ID', 'Track Name', 'Artist Name','Has Lyrics'])
+        musical_table = table(['Track No.','Track ID', 'Track Name', 'Has Lyrics'])
         index=1
         for item in data['message']['body']['track_list']: 
             track_id = item['track']['track_id']
             song_name = item['track']['track_name']
-            song_artist_name = item['track']['artist_name']
             with_lyrics = item['track']['has_lyrics']
             song = {}
             song["id"]=track_id
             song["name"]=song_name
-            song["artist_name"]=song_artist_name
             if with_lyrics == "0":
                 song["lyrics"] = "NO"
             else:
-                song["lyrics"]="YES"
+                song["lyrics"] = "YES"
 
-            musical_table.add_row([index, track_id, song_name, song_artist_name, song["lyrics"]])
+            musical_table.add_row([index, track_id, song_name, song["lyrics"]])
             self.songs[index]=song
             index+=1
         print(musical_table)
@@ -87,7 +85,7 @@ class Lines():
             query_string = {"apikey": self.api_key, "track_id": track_id}
             response = requests.get(self.base_url + method, params=query_string)
             data = response.json()
-            print("\n"+track["name"] + " by " + track["artist_name"])
+            print("\n"+track["name"])
             lyrics = data["message"]["body"]["lyrics"]["lyrics_body"]
             track["lyrics"] = lyrics
             print(lyrics)
@@ -107,8 +105,7 @@ class Lines():
     def save_song_details(self,track_id):
         track=self.songs[track_id]
         music=Music()
-        music.song_id=track["id"]
-        music.artist_name=track["artist_name"]
+        music.song_id=track["id"] 
         music.song_lyrics=track["lyrics"]
         music.song_name=track["name"]
         self.session.add(music)
