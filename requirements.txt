@@ -1,0 +1,5 @@
+requests==2.12.5
+prettytable==0.7.2
+SQLAlchemy==1.1.5
+musixmatch==0.9
+docopt==0.6.2
