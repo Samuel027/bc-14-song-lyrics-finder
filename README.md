@@ -25,8 +25,15 @@ Clone the following github repository.
 
 `https://github.com/Samuel027/song-lyrics-finder.git`
 
+Install requirements
 
-## Authors
+`pip install -r requirements.txt`
+
+Run the application
+
+`python myapplication.py`
+
+## Author
 
 * [Samuel Maina](https://github.com/Samuel027)
 
