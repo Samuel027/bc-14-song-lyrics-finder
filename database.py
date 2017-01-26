@@ -1,9 +1,9 @@
 """
 
-Filename    :
-Date        :
-Author      :
-Description :
+Filename    :	song-lyrics-finder.py
+Date        :	January, 2017
+Author      :	Samuel Maina
+Description :	Database configuration
 
 """
 
