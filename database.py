@@ -20,7 +20,6 @@ class Music(Base):
         __tablename__ = 'songs'
         song_id = Column(String, primary_key=True)
         song_name = Column(String(50))
-        song_artist_name = Column(String(50))
         song_lyrics = Column(Text())
 
 engine = create_engine('sqlite:///sqlite.db')
