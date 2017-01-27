@@ -49,7 +49,7 @@ class Lines():
         self.session = Session()
  
 # ====================================================================================
-# Function that fetches data from musixmatch by lyrics, name of song or artist name
+# Method that fetches data from musixmatch by lyrics, name of song or artist name
 # ====================================================================================
     def view_song_details(self, search_term):
         method = "track.search"
@@ -77,7 +77,7 @@ class Lines():
 
 
 # =================================================================
-# Function that fetches lyrics from musixmatch using the track id
+# Method that fetches lyrics from musixmatch using the track id
 # =================================================================
     def view_song_lyrics(self):
         track_id = input("\nEnter preferred track id: ")
@@ -104,7 +104,7 @@ class Lines():
 
 
 # =====================================================
-# Function that saves song details into the database
+# Method that saves song details into the database
 # =====================================================
 
     def save_song_details(self, track_id):
@@ -118,7 +118,7 @@ class Lines():
         print(music.song_name + " Saved Successfully\n")
 
 # ====================================
-# Function that clears the database
+# Method that clears the database
 # ====================================
     def clear_database(self):
         s = self.session.query(Music).delete()
